@@ -45,7 +45,7 @@
 .input__field {
   box-sizing: border-box;
   display: block;
-  width: 100%;
+  width: 450px;
   border: 3px solid currentColor;
   padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
   color: currentColor;
@@ -54,6 +54,11 @@
 }
 
 .input__field:focus + .input__label {
+  transform: translate(0.25rem, -65%) scale(0.8);
+  color: var(--color-accent);
+}
+
+.input__field:not(:placeholder-shown) + .input__label {
   transform: translate(0.25rem, -65%) scale(0.8);
   color: var(--color-accent);
 }
