@@ -1,5 +1,7 @@
 import { type NextPage } from "next";
+import { signIn } from "next-auth/react";
 import Head from "next/head";
+import FormGroup from "~/components/FormGroup";
 import Input from "~/components/Input";
 
 export const GeneratePage: NextPage = () => {

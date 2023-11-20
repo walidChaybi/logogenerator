@@ -1,5 +1,7 @@
 import { type NextPage } from "next";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useState } from "react";
+import Button from "~/components/Button";
 import FormGroup from "~/components/FormGroup";
 import Input from "~/components/Input";
 import { api } from "~/utils/api";
@@ -20,9 +22,31 @@ const GeneratePage: NextPage = () => {
     generateIcon.mutate(form);
   };
 
+  const session = useSession();
+
+  const isLoggedIn = session.data;
+
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-center ">
+        {!isLoggedIn && (
+          <Button
+            onClick={() => {
+              signIn().catch(console.error);
+            }}
+          >
+            sign in
+          </Button>
+        )}
+        {isLoggedIn && (
+          <Button
+            onClick={() => {
+              signOut().catch(console.error);
+            }}
+          >
+            sign Out
+          </Button>
+        )}
         <form onSubmit={handleSubit} className="flex flex-col gap-4">
           <FormGroup>
             <Input
@@ -35,9 +59,9 @@ const GeneratePage: NextPage = () => {
               }
             />
           </FormGroup>
-          <button className="w-[200px] rounded-md bg-blue-400 px-4 py-2 hover:bg-blue-300">
+          <Button className="w-[200px] rounded-md bg-blue-400 px-4 py-2 hover:bg-blue-300">
             Generate
-          </button>
+          </Button>
         </form>
       </main>
     </>
