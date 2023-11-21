@@ -18,7 +18,7 @@ const HeroBanner = () => {
           Unleash the Power of AI Creativity , Try our AI generator today and
           see the possibilities!
         </p>
-        <button onClick={() => router.push("/generate")} className="btn mt-8">
+        <button onClick={() => router.push("/generate")} className="btn mt-8 ">
           Start for Free
         </button>
       </div>

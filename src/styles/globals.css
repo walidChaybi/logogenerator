@@ -5,15 +5,36 @@
 body {
   background-color: #d6d6d6;
 }
-.glass {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+:root {
+  --color-light: transparent;
+  --color-dark: #212121;
+  --color-signal: #4437ff;
+
+  --color-background: var(--color-light);
+  --color-text: var(--color-dark);
+  --color-accent: var(--color-signal);
+
+  --size-bezel: 0.5rem;
+  --size-radius: 4px;
+
+  line-height: 1.4;
+
+  font-family: "Inter", sans-serif;
+  font-size: calc(0.6rem + 0.4vw);
+  color: var(--color-text);
+  background: var(--color-background);
+  font-weight: 300;
+  padding: 0 calc(var(--size-bezel) * 3);
+}
+
+button {
+  border-radius: 10px;
 }
 
 .login {
   all: unset;
-  width: 100px;
-  height: 30px;
+  width: 80px;
+  height: 20px;
   font-size: 16px;
   background: transparent;
   border: none;
@@ -42,7 +63,7 @@ body {
 }
 
 .login::before {
-  content: url("https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-32.png");
+  content: "";
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
@@ -51,7 +72,7 @@ body {
 }
 
 .logout::before {
-  content: url("https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-32.png");
+  content: "";
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
@@ -97,7 +118,6 @@ body {
   top: 0;
   padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
   margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5);
-  background: pink;
   white-space: nowrap;
   transform: translate(0, 0);
   transform-origin: 0 0;
@@ -119,12 +139,12 @@ body {
 }
 
 .input__field:focus + .input__label {
-  transform: translate(0.25rem, -65%) scale(0.8);
+  transform: translate(0.25rem, -120%) scale(1.1);
   color: var(--color-accent);
 }
 
 .input__field:not(:placeholder-shown) + .input__label {
-  transform: translate(0.25rem, -65%) scale(0.8);
+  transform: translate(0.25rem, -120%) scale(1.1);
   color: var(--color-accent);
 }
 
@@ -224,4 +244,47 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 2px 0 -2px #f85959, 0 8px 0 -4px #39a2db,
     0 12px 10px -3px #39a2db;
+}
+
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* button styling */
+.button {
+  --border-right: 4px;
+  --text-stroke-color: rgba(15, 81, 167, 0.6);
+  --animation-color: #4437ff;
+  --fs-size: 1.5em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
 }

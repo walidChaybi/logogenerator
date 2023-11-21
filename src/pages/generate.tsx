@@ -3,17 +3,15 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { type NextPage } from "next";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useState } from "react";
 import Button from "~/components/Button";
 import FormGroup from "~/components/FormGroup";
 import Input from "~/components/Input";
 import { api } from "~/utils/api";
 import Image from "next/image";
-import { useBuyCredits } from "~/hooks/useBuyCredits";
 
 const GeneratePage: NextPage = () => {
-  const { buyCredits } = useBuyCredits();
   const [form, setForm] = useState({
     prompt: "",
   });
@@ -35,38 +33,9 @@ const GeneratePage: NextPage = () => {
     });
   };
 
-  const session = useSession();
-
-  const isLoggedIn = session.data;
-
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-center ">
-        {!isLoggedIn && (
-          <Button
-            onClick={() => {
-              signIn().catch(console.error);
-            }}
-          >
-            sign in
-          </Button>
-        )}
-
-        {isLoggedIn && (
-          <div>
-            <Button onClick={() => buyCredits().catch(console.error)}>
-              Buy credits
-            </Button>
-            <Button
-              onClick={() => {
-                signOut().catch(console.error);
-              }}
-            >
-              sign Out
-            </Button>
-          </div>
-        )}
-
         <form onSubmit={handleSubit} className="flex flex-col gap-4">
           <FormGroup>
             <Input
