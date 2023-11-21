@@ -1,11 +1,13 @@
 import React from "react";
 
-function Button(props: React.ComponentPropsWithoutRef<"button">) {
+function Button(
+  props: React.ComponentPropsWithoutRef<"button"> & {
+    variant?: "login" | "logout";
+  }
+) {
+  const color = props.variant === "login" ? "login" : "login logout";
   return (
-    <button
-      {...props}
-      className="w-[200px] rounded-md bg-blue-400 px-4 py-2 hover:bg-blue-300"
-    >
+    <button {...props} className={color}>
       {props.children}
     </button>
   );

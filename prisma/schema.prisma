@@ -64,6 +64,7 @@ model Icon {
     prompt   String?
     User    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
     userId   String
+    imageUrl String?
 }
 
 model VerificationToken {

@@ -24,6 +24,11 @@ const server = z.object({
   REPLICATE_API_KEY: z.string().optional(),
   MOCK_REPLICATE: z.string().optional(),
   FIREBASE_API_KEY: z.string(),
+  STRIPE_SECRET_KEY: z.string(),
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string(),
+  HOST_NAME: z.string(),
+  PRICE_ID: z.string(),
+  STRIPE_WEB_HOOK_SECRET: z.string(),
 });
 
 /**
@@ -50,7 +55,12 @@ const processEnv = {
   REPLICATE_API_KEY: process.env.REPLICATE_API_KEY,
   MOCK_REPLICATE: process.env.MOCK_REPLICATE,
   FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
-  // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+  STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
+  HOST_NAME: process.env.HOST_NAME,
+  PRICE_ID: process.env.PRICE_ID,
+  STRIPE_WEB_HOOK_SECRET: process.env.STRIPE_WEB_HOOK_SECRET,
 };
 
 // Don't touch the part below

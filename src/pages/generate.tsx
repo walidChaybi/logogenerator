@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
@@ -9,8 +10,10 @@ import FormGroup from "~/components/FormGroup";
 import Input from "~/components/Input";
 import { api } from "~/utils/api";
 import Image from "next/image";
+import { useBuyCredits } from "~/hooks/useBuyCredits";
 
 const GeneratePage: NextPage = () => {
+  const { buyCredits } = useBuyCredits();
   const [form, setForm] = useState({
     prompt: "",
   });
@@ -50,13 +53,18 @@ const GeneratePage: NextPage = () => {
         )}
 
         {isLoggedIn && (
-          <Button
-            onClick={() => {
-              signOut().catch(console.error);
-            }}
-          >
-            sign Out
-          </Button>
+          <div>
+            <Button onClick={() => buyCredits().catch(console.error)}>
+              Buy credits
+            </Button>
+            <Button
+              onClick={() => {
+                signOut().catch(console.error);
+              }}
+            >
+              sign Out
+            </Button>
+          </div>
         )}
 
         <form onSubmit={handleSubit} className="flex flex-col gap-4">
