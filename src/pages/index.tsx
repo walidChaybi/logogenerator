@@ -3,7 +3,7 @@ import Head from "next/head";
 import Spline from "@splinetool/react-spline";
 import { useRouter } from "next/router";
 import { Button } from "@nextui-org/react";
-export const runtime = "edge";
+export const runtime = "experimental-edge";
 
 const HeroBanner = () => {
   const router = useRouter();
