@@ -3,9 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { type NextPage } from "next";
-import { useSession } from "next-auth/react";
 import { useState } from "react";
-import Button from "~/components/Button";
 import FormGroup from "~/components/FormGroup";
 import Input from "~/components/Input";
 import { api } from "~/utils/api";

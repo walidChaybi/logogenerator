@@ -8,9 +8,7 @@ import { z } from "zod";
 import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
 import Replicate from "replicate";
 import { env } from "~/env.mjs";
-import AWS from "aws-sdk";
 import { uploadFileToFirebase } from "~/utils/firebase";
-const imageToBase64 = require("image-to-base64");
 
 const replicate = new Replicate({
   auth: env.REPLICATE_API_KEY,
