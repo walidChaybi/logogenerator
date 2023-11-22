@@ -9,6 +9,7 @@ import Input from "~/components/Input";
 import { api } from "~/utils/api";
 import Image from "next/image";
 import Head from "next/head";
+export const runtime = "edge";
 
 const colors = [
   "red",
