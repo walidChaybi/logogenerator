@@ -12,7 +12,7 @@
       "memory": 3008,
       "maxDuration": 300
     },
-    "pages/api/**/*.ts": {
+    "*.ts": {
       "memory": 3008,
       "maxDuration": 300
     }
