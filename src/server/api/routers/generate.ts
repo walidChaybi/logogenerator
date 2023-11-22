@@ -43,7 +43,7 @@ async function generateIcon(
         },
       }
     );
-    return output[0];
+    return output[0 as keyof typeof output];
   }
 }
 export const generateRouter = createTRPCRouter({
