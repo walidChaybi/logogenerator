@@ -53,7 +53,7 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
           },
         });
 
-        const redirectUrl = "https://logogenerator-peach.vercel.app/";
+        const redirectUrl = "https://logogenerator-peach.vercel.app";
         res.writeHead(302, { Location: redirectUrl });
         res.end();
 
@@ -64,8 +64,9 @@ const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
 
     res.json({ received: true });
   } else {
-    res.setHeader("Allow", "POST");
-    res.status(405).end("Method Not Allowed");
+    const redirectUrl = "https://logogenerator-peach.vercel.app";
+    res.writeHead(302, { Location: redirectUrl });
+    res.end();
   }
 };
 
