@@ -12,8 +12,7 @@ export const config = {
   },
 };
 
-const endpointSecret =
-  "whsec_456a8d2707e21583aec405c80887f430fea06e0846673e4200d3c48f7816d5a0";
+const endpointSecret = "whsec_ugmwd3RcHqvjUjXTl824eO7dqatUAA9L";
 
 const webhook = async (req: NextApiRequest, res: NextApiResponse) => {
   console.log("object");
