@@ -18,31 +18,30 @@ async function generateIcon(
   prompt: string,
   color: string
 ): Promise<string | undefined> {
-  if (env.MOCK_REPLICATE === "true") {
-    return "https://firebasestorage.googleapis.com/v0/b/ainotes-5a225.appspot.com/o/icon1700497171428.png?alt=media&token=f5f23653-b572-42e7-8e4a-f1e84347db61";
-  } else {
-    const output = await replicate.run(
-      "nandycc/sdxl-app-icons:5839ce85291601c6af252443a642a1cbd12eea8c83e41f27946b9212ff845dbf",
-      {
-        input: {
-          width: 1024,
-          height: 1024,
-          prompt: `${prompt} app icon in ${color}`,
-          refine: "no_refiner",
-          scheduler: "K_EULER",
-          lora_scale: 0.6,
-          num_outputs: 1,
-          guidance_scale: 7.5,
-          apply_watermark: true,
-          high_noise_frac: 0.8,
-          negative_prompt: "",
-          prompt_strength: 0.8,
-          num_inference_steps: 50,
-        },
-      }
-    );
-    return output[0 as keyof typeof output];
-  }
+  // if (env.MOCK_REPLICATE === "true") {
+  //   return "https://firebasestorage.googleapis.com/v0/b/ainotes-5a225.appspot.com/o/icon1700497171428.png?alt=media&token=f5f23653-b572-42e7-8e4a-f1e84347db61";
+  // }
+  const output = await replicate.run(
+    "nandycc/sdxl-app-icons:5839ce85291601c6af252443a642a1cbd12eea8c83e41f27946b9212ff845dbf",
+    {
+      input: {
+        width: 1024,
+        height: 1024,
+        prompt: `${prompt} app icon in ${color}`,
+        refine: "no_refiner",
+        scheduler: "K_EULER",
+        lora_scale: 0.6,
+        num_outputs: 1,
+        guidance_scale: 7.5,
+        apply_watermark: true,
+        high_noise_frac: 0.8,
+        negative_prompt: "",
+        prompt_strength: 0.8,
+        num_inference_steps: 50,
+      },
+    }
+  );
+  return output[0 as keyof typeof output];
 }
 export const generateRouter = createTRPCRouter({
   generateIcon: protectedProcedure
@@ -77,7 +76,7 @@ export const generateRouter = createTRPCRouter({
 
       const firebase_url = await uploadFileToFirebase(url as string, "icon");
 
-      await ctx.prisma.icon.create({
+      const icon = await ctx.prisma.icon.create({
         data: {
           prompt: input.prompt,
           userId: ctx.session.user.id,

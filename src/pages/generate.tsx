@@ -78,6 +78,7 @@ const GeneratePage: NextPage = () => {
                 return (
                   <>
                     <input
+                      key={color}
                       onChange={(e) =>
                         setForm({ ...form, color: e.target.value })
                       }
