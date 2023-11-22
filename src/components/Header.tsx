@@ -2,7 +2,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Button from "./Button";
 import { useBuyCredits } from "~/hooks/useBuyCredits";
 
 function Header() {
@@ -17,8 +16,7 @@ function Header() {
       <ul>
         <li>
           <Link href="/generate">
-            <button className="button" data-text="Awesome">
-              <span className="actual-text">&nbsp;GENERATE&nbsp;</span>
+            <button className="btn" data-text="Awesome">
               <span aria-hidden="true" className="hover-text">
                 &nbsp;GENERATE&nbsp;
               </span>
@@ -28,37 +26,37 @@ function Header() {
       </ul>
       <ul>
         {isLogedIn && (
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex flex-col items-center justify-center gap-2">
             <li>
               <button
-                className=" bg-indigo-800 px-4 py-2 text-slate-200"
+                className=" mx-2 rounded-xl bg-indigo-600 px-3 py-2 text-slate-200 shadow-md duration-300 hover:bg-indigo-800"
                 onClick={() => buyCredits().catch(console.error)}
               >
                 Buy credits
               </button>
             </li>
             <li>
-              <Button
-                variant="logout"
+              <button
+                className="w-24 rounded-xl bg-gray-600 px-3 py-2 text-slate-200 shadow-md hover:bg-gray-800"
                 onClick={() => {
                   signOut().catch(console.error);
                 }}
               >
                 Log out
-              </Button>
+              </button>
             </li>
           </div>
         )}
         {!isLogedIn && (
           <li>
-            <Button
-              variant="login"
+            <button
+              className="w-24 rounded-xl bg-indigo-600 px-3 py-2 text-slate-200 shadow-md duration-300 hover:bg-indigo-800"
               onClick={() => {
                 signIn().catch(console.error);
               }}
             >
               Login
-            </Button>
+            </button>
           </li>
         )}
       </ul>

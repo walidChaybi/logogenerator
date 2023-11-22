@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Spline from "@splinetool/react-spline";
 import { useRouter } from "next/router";
+import { Button } from "@nextui-org/react";
 
 const HeroBanner = () => {
   const router = useRouter();
