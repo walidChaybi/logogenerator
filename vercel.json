@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/trpc/generate.generateIcon": {
+    "pages/api/trpc": {
       "memory": 3008,
       "maxDuration": 300
     }
