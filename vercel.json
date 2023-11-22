@@ -2,7 +2,7 @@
   "functions": {
     "pages/api/trpc/[trpc].ts": {
       "memory": 3008,
-      "maxDuration": 300
+      "maxDuration": 500
     },
     "pages/api/generate.ts": {
       "memory": 3008,
@@ -12,7 +12,7 @@
       "memory": 3008,
       "maxDuration": 300
     },
-    "*.ts": {
+    "pages/api/**/*.ts": {
       "memory": 3008,
       "maxDuration": 300
     }
