@@ -2,7 +2,7 @@
   "functions": {
     "pages/api/generate.ts": {
       "memory": 3008,
-      "maxDuration": 75
+      "maxDuration": 300
     }
   }
 }
