@@ -13,9 +13,9 @@ import Head from "next/head";
 const colors = [
   "red",
   "pink",
+  "green",
   "orange",
   "teal",
-  "green",
   "blue",
   "yellow",
   "indigo",
