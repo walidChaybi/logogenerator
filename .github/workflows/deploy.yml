@@ -20,6 +20,8 @@ jobs:
       REPLICATE_API_KEY: ${{ secrets.REPLICATE_API_KEY }}
       MOCK_REPLICATE: ${{ secrets.MOCK_REPLICATE }}
       FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
       - name: Checkout code
