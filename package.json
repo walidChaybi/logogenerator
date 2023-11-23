@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "sst bind next dev",
+    "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
     "start": "next start",
@@ -32,13 +32,11 @@
     "clsx": "^2.0.0",
     "firebase": "^10.6.0",
     "framer-motion": "^10.16.5",
-    "image-to-base64": "^2.2.0",
     "lucide-react": "^0.292.0",
     "micro": "^10.0.1",
     "next": "^13.2.1",
     "next-auth": "^4.19.0",
-    "openai": "^4.19.0",
-    "openai-edge": "^1.2.2",
+    "openai": "^4.20.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.12.0",
@@ -59,6 +57,8 @@
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "autoprefixer": "^10.4.7",
+    "aws-cdk-lib": "2.101.1",
+    "constructs": "10.2.69",
     "eslint": "^8.34.0",
     "eslint-config-next": "^13.2.1",
     "postcss": "^8.4.14",
@@ -66,10 +66,7 @@
     "prettier-plugin-tailwindcss": "^0.2.1",
     "prisma": "^4.9.0",
     "tailwindcss": "^3.2.0",
-    "typescript": "^4.9.5",
-    "sst": "^2.36.2",
-    "aws-cdk-lib": "2.101.1",
-    "constructs": "10.2.69"
+    "typescript": "^4.9.5"
   },
   "ct3aMetadata": {
     "initVersion": "7.5.9"

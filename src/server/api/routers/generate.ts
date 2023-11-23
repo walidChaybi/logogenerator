@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
@@ -43,6 +44,7 @@ async function generateIcon(
   );
   return output[0 as keyof typeof output];
 }
+
 export const generateRouter = createTRPCRouter({
   generateIcon: protectedProcedure
     .input(
