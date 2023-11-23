@@ -28,7 +28,7 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "src/pages/api/generate.ts"
+    "src/server/api/routers/generate.ts"
   ],
   "exclude": ["node_modules"]
 }
