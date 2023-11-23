@@ -76,18 +76,19 @@ export const generateRouter = createTRPCRouter({
       }
       const url = await generateIcon(input.prompt, input.color || "colorful");
 
-      const firebase_url = await uploadFileToFirebase(url as string, "icon");
+      //const firebase_url = await uploadFileToFirebase(url as string, "icon");
 
-      const icon = await ctx.prisma.icon.create({
+      await ctx.prisma.icon.create({
         data: {
           prompt: input.prompt,
           userId: ctx.session.user.id,
-          imageUrl: firebase_url,
+          // imageUrl: firebase_url,
         },
       });
 
       return {
-        image: firebase_url,
+        image: url,
+        //firebase_url,
       };
     }),
 });
