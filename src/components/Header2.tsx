@@ -53,7 +53,7 @@ function Header2() {
                   </Link>
                   <Link
                     className="rounded-md  px-3 py-2 text-xl font-medium text-gray-800 hover:text-indigo-500 dark:hover:text-white"
-                    href="/#"
+                    href="/showcase"
                   >
                     Showcase
                   </Link>
@@ -175,7 +175,7 @@ function Header2() {
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               <Link
                 className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 "
-                href="/#"
+                href="/"
               >
                 Home
               </Link>
@@ -187,7 +187,7 @@ function Header2() {
               </Link>
               <Link
                 className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 "
-                href="/#"
+                href="/showcase"
               >
                 Showcase
               </Link>
