@@ -28,7 +28,7 @@ export default {
         FIREBASE_API_KEY: process.env.FIREBASE_API_KEY;
         OPENAI_API_KEY: process.env.OPENAI_API_KEY;
       }
-
+      timeout: "50 seconds";
       stack.addOutputs({
         SiteUrl: site.url,
       });
