@@ -49,7 +49,7 @@ const GeneratePage: NextPage = () => {
       </Head>
       <main className="container mx-auto mt-14 flex min-h-screen flex-col items-center">
         <div className="mb-16 flex w-full flex-col items-center">
-          <h1 className="mb-6 text-6xl font-semibold">Generate AI icons</h1>
+          <h1 className="mb-4 text-6xl font-semibold">Generate AI icons</h1>
           <p className="text-xl">
             Fill your from below to start generating your icons
           </p>
@@ -71,7 +71,7 @@ const GeneratePage: NextPage = () => {
             />
           </FormGroup>
 
-          <h2 className="mb-2 mt-12 text-3xl">2. Pick your icon color</h2>
+          <h2 className=" mt-12 text-3xl">2. Pick your icon color</h2>
           <FormGroup>
             <div className="radio-input">
               {colors.map((color) => {
@@ -89,7 +89,7 @@ const GeneratePage: NextPage = () => {
                     />
                     <label
                       htmlFor={color}
-                      className="m-4 flex w-6 flex-col items-center gap-2"
+                      className="mx-4 flex w-6 flex-col items-center "
                     >
                       <span>
                         <svg
@@ -125,7 +125,7 @@ const GeneratePage: NextPage = () => {
           </FormGroup>
 
           <button
-            className="relative mx-2 w-56 items-center rounded-xl bg-indigo-600 px-3 py-2 text-slate-200 shadow-md duration-300 hover:bg-indigo-800 disabled:bg-gray-500"
+            className="relative mx-2 mt-16 w-96 items-center rounded-xl bg-indigo-600 px-3 py-2 text-slate-100 shadow-md duration-300 hover:bg-indigo-800 disabled:bg-gray-500"
             disabled={generateIcon.isLoading || !form.prompt}
           >
             {generateIcon.isLoading && (
@@ -137,15 +137,12 @@ const GeneratePage: NextPage = () => {
 
         {image && (
           <>
-            <h2 className="m-12 text-2xl font-bold text-indigo-600">
-              Your Icons
-            </h2>
             <section className="grid grid-cols-4 gap-4">
               <Image
                 src={image}
                 alt={form.prompt}
-                width="100"
-                height="100"
+                width="200"
+                height="200"
                 className="w-full"
               />
             </section>

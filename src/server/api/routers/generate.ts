@@ -32,7 +32,7 @@ async function generateIcon(
       input: {
         width: 1024,
         height: 1024,
-        prompt: `${prompt} app icon in ${color}`,
+        prompt: `${prompt} app icon in ${color} `,
         refine: "no_refiner",
         scheduler: "K_EULER",
         lora_scale: 0.6,
@@ -80,18 +80,18 @@ export const generateRouter = createTRPCRouter({
       }
       const url = await generateIcon(input.prompt, input.color || "colorful");
 
-      //const firebase_url = await uploadFileToFirebase(url as string, "icon");
+      const firebase_url = await uploadFileToFirebase(url as string, "icon");
 
       await ctx.prisma.icon.create({
         data: {
           prompt: input.prompt,
           userId: ctx.session.user.id,
-          // imageUrl: firebase_url,
+          imageUrl: firebase_url,
         },
       });
 
       return {
-        image: url,
+        image: firebase_url,
         //firebase_url,
       };
     }),

@@ -4,7 +4,11 @@
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ["replicate.delivery", "firebasestorage.googleapis.com"],
+    domains: [
+      "replicate.delivery",
+      "firebasestorage.googleapis.com",
+      "lh3.googleusercontent.com",
+    ],
   },
 
   i18n: {

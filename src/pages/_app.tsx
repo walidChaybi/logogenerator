@@ -6,6 +6,8 @@ import "~/styles/globals.css";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 import { NextUIProvider } from "@nextui-org/react";
+import Header2 from "~/components/Header2";
+import Head from "next/head";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -14,7 +16,17 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <NextUIProvider>
-        <Header />
+        <Head>
+          <title>Icon Wizard</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;600;700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        {/* <Header /> */}
+        <Header2 />
         <Component {...pageProps} />
         <Footer />
       </NextUIProvider>

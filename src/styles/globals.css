@@ -1,8 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;600;700&display=swap");
+
 body {
-  background-color: #d6d6d6;
+  background-color: #ffffff;
 }
 :root {
   --color-light: transparent;
@@ -19,7 +22,7 @@ body {
   line-height: 1.4;
   color: var(--color-text);
   background: var(--color-background);
-  font-weight: 300;
+  font-family: "Expletus Sans", sans-serif;
   padding: 0 calc(var(--size-bezel) * 3);
 }
 
@@ -123,7 +126,7 @@ body {
 
 .radio-input {
   background-color: #fff;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 20px;
   display: flex;
 }
@@ -197,36 +200,9 @@ body {
   opacity: 1;
 }
 
-.radio-input:has(input[type="radio"]#red:checked) {
-  background-color: #e92b24b2;
-}
-
-.radio-input:has(input[type="radio"]#orange:checked) {
-  background-color: #db7f3498;
-}
-
-.radio-input:has(input[type="radio"]#pink:checked) {
-  background-color: #f10fb869;
-}
-.radio-input:has(input[type="radio"]#teal:checked) {
-  background-color: #2ecc8a;
-}
-
-.radio-input:has(input[type="radio"]#green:checked) {
-  background-color: #0e7613cb;
-}
-
-.radio-input:has(input[type="radio"]#blue:checked) {
-  background-color: #0f5ef1cd;
-}
-.radio-input:has(input[type="radio"]#indigo:checked) {
-  background-color: #3533a4a2;
-}
-
-.radio-input:has(input[type="radio"]#yellow:checked) {
-  background-color: #f4c5079e;
-}
-
-.radio-input:has(input[type="radio"]#purple:checked) {
-  background-color: #8033a4bb;
+.glass {
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }

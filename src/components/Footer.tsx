@@ -9,12 +9,10 @@ function Footer() {
         <div className="sm:flex sm:items-center sm:justify-between">
           <Link
             href="/"
-            className="mb-4 flex items-center space-x-3 rtl:space-x-reverse sm:mb-0"
+            className="mb-4 flex items-center rtl:space-x-reverse sm:mb-0"
           >
-            <Image src="/logo.png" alt="logo" width={75} height={0} />
-            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-              Ai Icon Generator
-            </span>
+            <Image src="/logo.png" alt="logo" width={180} height={0} />
+            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white"></span>
           </Link>
           <ul className="mb-6 flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:mb-0">
             <li>
