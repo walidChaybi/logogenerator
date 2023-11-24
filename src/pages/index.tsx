@@ -17,7 +17,7 @@ const HeroBanner = () => {
         </h1>
         <p className="text-xl font-normal text-gray-500">
           Unleash the Power of AI Creativity , Try our AI generator today and
-          see the possibilities!
+          see the possibilities
         </p>
         <button onClick={() => router.push("/generate")} className="btn mt-8 ">
           Start for Free
