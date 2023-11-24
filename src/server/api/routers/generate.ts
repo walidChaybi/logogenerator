@@ -11,9 +11,9 @@ import Replicate from "replicate";
 import { env } from "~/env.mjs";
 import { uploadFileToFirebase } from "~/utils/firebase";
 
-export const config = {
-  maxDuration: 200,
-};
+// export const config = {
+//   maxDuration: 200,
+// };
 
 const replicate = new Replicate({
   auth: env.REPLICATE_API_KEY,
