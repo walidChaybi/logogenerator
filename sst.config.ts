@@ -27,6 +27,8 @@ export default {
         MOCK_REPLICATE: process.env.MOCK_REPLICATE;
         FIREBASE_API_KEY: process.env.FIREBASE_API_KEY;
         OPENAI_API_KEY: process.env.OPENAI_API_KEY;
+        AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID;
+        AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY;
       }
       timeout: "50 seconds";
       stack.addOutputs({

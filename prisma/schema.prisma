@@ -66,6 +66,7 @@ model Icon {
     User    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
     userId   String
     imageUrl String?
+    createdAt DateTime @default(now())
 }
 
 model VerificationToken {
