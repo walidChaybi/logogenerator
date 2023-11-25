@@ -16,18 +16,18 @@ const logos = [
   "logo8.png",
 ];
 
-const LogoCarousel = () => {
+const LogoCarousel = (props: { className: string }) => {
   const settings = {
     infinite: true,
     speed: 1000,
-    slidesToShow: 6,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     pauseOnHover: true,
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...props} {...settings}>
       {logos.map((logo, index) => (
         <div key={index}>
           <Image

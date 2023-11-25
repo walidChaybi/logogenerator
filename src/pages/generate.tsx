@@ -9,6 +9,7 @@ import Input from "~/components/Input";
 import { api } from "~/utils/api";
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 
 const colors = [
   "red",
@@ -32,8 +33,8 @@ const GeneratePage: NextPage = () => {
 
   const generateIcon = api.generate.generateIcon.useMutation({
     onSuccess: (data) => {
-      if (!data.image) return;
-      setImage(data.image);
+      if (!data.imageUrl) return;
+      setImage(data.imageUrl);
     },
   });
 
@@ -45,7 +46,7 @@ const GeneratePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Generate Icons</title>
+        <title>Generate AI Icons</title>
       </Head>
       <main className="container mx-auto mt-14 flex min-h-screen flex-col items-center">
         <div className="mb-16 flex w-full flex-col items-center">
@@ -58,7 +59,6 @@ const GeneratePage: NextPage = () => {
           onSubmit={handleSubit}
           className="flex w-full flex-col items-center gap-4"
         >
-          <h2 className="mb-2 text-3xl">1. Describe your icon idea.</h2>
           <FormGroup>
             <Input
               value={form.prompt}
@@ -138,13 +138,15 @@ const GeneratePage: NextPage = () => {
         {image && (
           <>
             <section className="grid grid-cols-4 gap-4">
-              <Image
-                src={image}
-                alt={form.prompt}
-                width="200"
-                height="200"
-                className="w-full"
-              />
+              <Link href={image}>
+                <Image
+                  src={image}
+                  alt={form.prompt}
+                  width="200"
+                  height="200"
+                  className="w-full"
+                />
+              </Link>
             </section>
           </>
         )}

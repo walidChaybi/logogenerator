@@ -91,8 +91,7 @@ export const generateRouter = createTRPCRouter({
       });
 
       return {
-        image: firebase_url,
-        //firebase_url,
+        imageUrl: firebase_url,
       };
     }),
 });

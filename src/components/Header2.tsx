@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useBuyCredits } from "~/hooks/useBuyCredits";
+import { api } from "~/utils/api";
 
 function Header2() {
   const [showMenu, setShowMenu] = React.useState(false);
@@ -11,6 +12,8 @@ function Header2() {
   const session = useSession();
   const { buyCredits } = useBuyCredits();
   const isLogedIn = !!session.data;
+
+  const credits = api.user.getCredits.useQuery();
 
   return (
     <div>
@@ -39,23 +42,23 @@ function Header2() {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    className="rounded-md px-3 py-2 text-xl font-medium text-gray-800 duration-200 hover:scale-110 hover:text-indigo-500 dark:hover:text-white"
-                    href="/"
-                  >
-                    Home
-                  </Link>
-
-                  <Link
                     className="rounded-md  px-3 py-2 text-xl font-medium text-gray-800 hover:text-indigo-500 dark:hover:text-white"
                     href="/generate"
                   >
                     Generate
                   </Link>
                   <Link
+                    className="rounded-md px-3 py-2 text-xl font-medium text-gray-800 duration-200 hover:scale-110 hover:text-indigo-500 dark:hover:text-white"
+                    href="/community"
+                  >
+                    Community
+                  </Link>
+
+                  <Link
                     className="rounded-md  px-3 py-2 text-xl font-medium text-gray-800 hover:text-indigo-500 dark:hover:text-white"
                     href="/showcase"
                   >
-                    Showcase
+                    Collection
                   </Link>
                 </div>
               </div>
@@ -65,7 +68,16 @@ function Header2() {
               <div className=" flex items-center md:ml-6">
                 <div className="relative ml-3">
                   <div className="relative inline-block text-left">
-                    <div>
+                    <div className=" ">
+                      {isLogedIn && (
+                        <p>
+                          Credits:{" "}
+                          <span className="font-bold text-indigo-950">
+                            {credits.data}
+                          </span>
+                        </p>
+                      )}
+
                       <button
                         onMouseEnter={() => setShowMenu(true)}
                         type="button"
@@ -174,12 +186,6 @@ function Header2() {
           <div className="md-hidden absolute left-0 top-0 flex min-h-screen w-full items-center justify-center bg-gray-900">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               <Link
-                className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 "
-                href="/"
-              >
-                Home
-              </Link>
-              <Link
                 className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 dark:text-white"
                 href="/generate"
               >
@@ -187,9 +193,15 @@ function Header2() {
               </Link>
               <Link
                 className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 "
+                href="/community"
+              >
+                Community
+              </Link>
+              <Link
+                className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 "
                 href="/showcase"
               >
-                Showcase
+                Collection
               </Link>
             </div>
           </div>
