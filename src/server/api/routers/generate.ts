@@ -27,7 +27,7 @@ async function generateIcon(
   //   return "https://firebasestorage.googleapis.com/v0/b/ainotes-5a225.appspot.com/o/icon1700497171428.png?alt=media&token=f5f23653-b572-42e7-8e4a-f1e84347db61";
   // }
   const output = await replicate.run(
-    "nandycc/sdxl-app-icons:5839ce85291601c6af252443a642a1cbd12eea8c83e41f27946b9212ff845dbf",
+    "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
     {
       input: {
         width: 1024,
