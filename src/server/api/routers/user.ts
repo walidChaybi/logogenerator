@@ -6,9 +6,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
 
-// export const config = {
-//   maxDuration: 200,
-// };
+export const config = {
+  maxDuration: 200,
+};
 
 export const userRouter = createTRPCRouter({
   getCredits: protectedProcedure.query(async ({ ctx }) => {

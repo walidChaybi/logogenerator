@@ -10,9 +10,9 @@ import {
   publicProcedure,
 } from "~/server/api/trpc";
 
-// export const config = {
-//   maxDuration: 200,
-// };
+export const config = {
+  maxDuration: 200,
+};
 
 export const iconsRouter = createTRPCRouter({
   getIcons: protectedProcedure.query(async ({ ctx }) => {

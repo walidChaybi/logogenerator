@@ -21,7 +21,7 @@ const Card = ({
 }) => {
   return (
     <>
-      <div className="glass duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-xl">
+      <div className="glass p-3 duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-xl">
         <Link
           target="_blank"
           href={url}
@@ -32,10 +32,12 @@ const Card = ({
             alt={prompt}
             width={384}
             height={384}
-            className="w-96 rounded-xl"
+            className="w-96 rounded-xl shadow-xl"
           />
           <div className="py-4 text-center">
-            <h3 className="h-16 w-full hover:text-indigo-800">{prompt}</h3>
+            <h3 className=" text-md h-16 w-full overflow-clip font-normal hover:text-indigo-800">
+              {prompt}
+            </h3>
             <p className="text-body-color dark:text-dark-6 mb-7 text-base leading-relaxed">
               {`Created at: ${date.toLocaleDateString("fr")}`}
             </p>

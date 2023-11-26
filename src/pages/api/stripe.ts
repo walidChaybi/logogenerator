@@ -12,6 +12,10 @@ export const config = {
   },
 };
 
+export const config = {
+  maxDuration: 200,
+};
+
 const endpointSecret = "whsec_ugmwd3RcHqvjUjXTl824eO7dqatUAA9L";
 
 const webhook = async (req: NextApiRequest, res: NextApiResponse) => {

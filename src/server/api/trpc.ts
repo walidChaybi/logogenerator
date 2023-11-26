@@ -20,9 +20,9 @@ import { type Session } from "next-auth";
 import { getServerAuthSession } from "~/server/auth";
 import { prisma } from "~/server/db";
 
-// export const config = {
-//   maxDuration: 200,
-// };
+export const config = {
+  maxDuration: 200,
+};
 
 type CreateContextOptions = {
   session: Session | null;
