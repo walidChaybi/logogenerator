@@ -5,32 +5,44 @@
 import { type NextPage } from "next";
 import { useState } from "react";
 import FormGroup from "~/components/FormGroup";
-import Input from "~/components/Input";
 import { api } from "~/utils/api";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
-const colors = [
-  "red",
-  "pink",
-  "green",
-  "orange",
-  "teal",
-  "blue",
-  "yellow",
-  "indigo",
-  "purple",
+const styles = [
+  "metallic",
+  "polygon",
+  "pixelated",
+  "clay",
+  "gradient",
+  "flat",
+  "illustrated",
+  "minimalistic",
+  "hand",
+  "watercolor",
+  "isometric",
+  "neon",
+  "cartoonish",
+  "ddd",
+  "line-art",
+  "pop-art",
+  "doodle",
+  "grunge",
+  "sticker",
+  "realistic",
+  "mosaic",
+  "origami",
+  "chalkboard",
+  "woodcut",
 ];
-const shapes = ["square", "circle", "rounded"];
 
 const GeneratePage: NextPage = () => {
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     prompt: "",
-    color: "",
-    number: 1,
-    shape: "",
+    style: "",
   });
 
   const [image, setImage] = useState<string | undefined>("");
@@ -40,9 +52,13 @@ const GeneratePage: NextPage = () => {
       if (!data.imageUrl) return;
       setImage(data.imageUrl);
     },
+    onError: (error) => {
+      setError(error.message);
+    },
   });
 
   const handleSubit = (e: React.FormEvent) => {
+    setError(null);
     e.preventDefault();
     generateIcon.mutate(form);
   };
@@ -61,45 +77,44 @@ const GeneratePage: NextPage = () => {
         </div>
         <form
           onSubmit={handleSubit}
-          className="flex w-full flex-col items-center gap-12"
+          className=" flex w-full flex-col items-center gap-12"
         >
           <h2 className="mt-8 cursor-default border-b border-b-gray-300 pb-4 text-3xl text-gray-600">
             1. Icon idea, be as descriptive as possible
           </h2>
-          <FormGroup>
-            <textarea
-              className="input__field"
-              placeholder="Bodybuilding, strong man with a red t-shirt, full body"
-              value={form.prompt}
-              onChange={(e) =>
-                setForm({
-                  ...form,
-                  prompt: e.target.value,
-                })
-              }
-            />
-          </FormGroup>
+          <textarea
+            className=" w-full rounded-md border border-gray-300 p-2 text-xl font-semibold "
+            placeholder="Bodybuilding, strong man with a red t-shirt, full body"
+            spellCheck={false}
+            value={form.prompt}
+            onChange={(e) =>
+              setForm({
+                ...form,
+                prompt: e.target.value,
+              })
+            }
+          />
 
           <h2 className="mt-8 cursor-default border-b border-b-gray-300 pb-4 text-3xl text-gray-600">
             2. Choose a Style
           </h2>
           <FormGroup>
             <div className="radio-input">
-              {shapes.map((shape) => {
+              {styles.map((style) => {
                 return (
                   <>
                     <input
-                      key={shape}
+                      key={style}
                       onChange={(e) =>
-                        setForm({ ...form, shape: e.target.value })
+                        setForm({ ...form, style: e.target.value })
                       }
-                      value={shape}
-                      name="shape"
-                      id={shape}
+                      value={style}
+                      name="style"
+                      id={style}
                       type="radio"
                     />
                     <label
-                      htmlFor={shape}
+                      htmlFor={style}
                       className="mx-4 flex w-12 flex-col items-center justify-center"
                     >
                       <span>
@@ -129,7 +144,7 @@ const GeneratePage: NextPage = () => {
                           </g>
                         </svg>
                       </span>
-                      {shape}
+                      {style}
                     </label>
                   </>
                 );
@@ -163,6 +178,9 @@ const GeneratePage: NextPage = () => {
             Generate
           </button>
         </form>
+        {error && (
+          <div className="rounded-md bg-red-500 p-4 text-white">{error}</div>
+        )}
 
         {image && (
           <>

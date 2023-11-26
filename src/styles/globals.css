@@ -26,6 +26,7 @@ body {
 }
 
 .input__label {
+  width: 100%;
   cursor: text;
   position: absolute;
   left: 0;
@@ -44,7 +45,6 @@ body {
 .input__field {
   box-sizing: border-box;
   display: block;
-  width: 550px;
   border: 3px solid currentColor;
   padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
   color: currentColor;
@@ -125,11 +125,15 @@ body {
 }
 
 .radio-input {
-  background-color: #fff;
+  width: 100%;
+  background-color: #f1f1f1;
   padding: 0px 20px;
   border-radius: 20px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+  padding: 20px;
 }
 
 .radio-input input[type="radio"] {
@@ -163,50 +167,101 @@ body {
   transition: all 0.3s ease;
 }
 
-.radio-input input[type="radio"]#red + label span {
-  background-color: #cc332e;
-}
-.radio-input input[type="radio"]#rounded + label span {
-  background: url("/logo3.png");
+.radio-input input[type="radio"]#metallic + label span {
+  background: url("/metallic.png");
   background-size: cover;
 }
-.radio-input input[type="radio"]#circle + label span {
-  background: url("/logo2.png");
+.radio-input input[type="radio"]#polygon + label span {
+  background: url("/polygon.png");
   background-size: cover;
 }
-.radio-input input[type="radio"]#square + label span {
-  background: url("/logo1.png");
+.radio-input input[type="radio"]#pixelated + label span {
+  background: url("/pixelated.png");
   background-size: cover;
 }
-
-.radio-input input[type="radio"]#orange + label span {
-  background-color: #db7f34;
+.radio-input input[type="radio"]#clay + label span {
+  background: url("/clay.png");
+  background-size: cover;
 }
-
-.radio-input input[type="radio"]#pink + label span {
-  background-color: #f10fb8;
+.radio-input input[type="radio"]#gradient + label span {
+  background: url("/gradient.png");
+  background-size: cover;
 }
-.radio-input input[type="radio"]#teal + label span {
-  background-color: #2ecc8a;
+.radio-input input[type="radio"]#flat + label span {
+  background: url("/flat.png");
+  background-size: cover;
 }
-
-.radio-input input[type="radio"]#green + label span {
-  background-color: #0e7614;
+.radio-input input[type="radio"]#illustrated + label span {
+  background: url("/illustrated.png");
+  background-size: cover;
 }
-
-.radio-input input[type="radio"]#blue + label span {
-  background-color: #0f5ef1;
+.radio-input input[type="radio"]#minimalistic + label span {
+  background: url("/minimalistic.png");
+  background-size: cover;
 }
-.radio-input input[type="radio"]#indigo + label span {
-  background-color: #3533a4;
+.radio-input input[type="radio"]#hand + label span {
+  background: url("/hand-drawn.png");
+  background-size: cover;
 }
-
-.radio-input input[type="radio"]#yellow + label span {
-  background-color: #f4c407;
+.radio-input input[type="radio"]#watercolor + label span {
+  background: url("/watercolor.png");
+  background-size: cover;
 }
-
-.radio-input input[type="radio"]#purple + label span {
-  background-color: #9f3bce;
+.radio-input input[type="radio"]#isometric + label span {
+  background: url("/isometric.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#neon + label span {
+  background: url("/neon.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#cartoonish + label span {
+  background: url("/cartoonish.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#ddd + label span {
+  background: url("/3d.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#line-art + label span {
+  background: url("/line-art.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#pop-art + label span {
+  background: url("/pop-art.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#doodle + label span {
+  background: url("/doodle.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#grunge + label span {
+  background: url("/grunge.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#sticker + label span {
+  background: url("/sticker.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#realistic + label span {
+  background: url("/realistic.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#mosaic + label span {
+  background: url("/mosaic.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#origami + label span {
+  background: url("/origami.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#chalkboard + label span {
+  background: url("/chalkboard.png");
+  background-size: cover;
+}
+.radio-input input[type="radio"]#woodcut + label span {
+  background: url("/woodcut.png");
+  background-size: cover;
 }
 
 .radio-input input[type="radio"]:checked + label span svg {
