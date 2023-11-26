@@ -8,9 +8,9 @@ const HeroBanner = () => {
   const router = useRouter();
 
   return (
-    <section className="container mt-16 flex flex-col-reverse md:flex-row ">
+    <section className="mt-16 flex flex-col-reverse md:flex-row ">
       <div className="my-24 flex flex-1 flex-col font-medium text-gray-950">
-        <h1 className="my-10 text-6xl">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl">
           Generate mesmerizing{" "}
           <span className="font-bold text-indigo-500">icons</span> with a click
           of a button
@@ -22,11 +22,11 @@ const HeroBanner = () => {
           Start for Free
         </button>
       </div>
-      <div className="mt-8 flex-col md:block lg:block ">
+      <div className="mt-8 hidden flex-col md:block lg:block ">
         <Image
           src="/generatedicons.png"
           height={0}
-          width={750}
+          width={500}
           alt="generated ai icon"
         />
       </div>

@@ -95,7 +95,7 @@ function Header2() {
                           </div>
                         )}
                         <Image
-                          className="shadow-sl rounded-full"
+                          className="hidden rounded-full shadow-xl md:block"
                           src={session.data?.user.image || "/logosmall.png"}
                           width={40}
                           height={0}
@@ -165,8 +165,8 @@ function Header2() {
           </div>
         </div>
         {showBurger && (
-          <div className="md-hidden absolute left-0 top-0 flex min-h-screen w-full items-center justify-center bg-gray-900">
-            <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+          <div className="md-hidden absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-gray-900">
+            <div className="space-y-1 pb-3 pt-2 sm:px-3">
               <Link
                 className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 dark:text-white"
                 href="/generate"
