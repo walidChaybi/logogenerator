@@ -29,6 +29,7 @@ const server = z.object({
   HOST_NAME: z.string(),
   PRICE_ID: z.string(),
   STRIPE_WEB_HOOK_SECRET: z.string(),
+  OPENAI_API_KEY: z.string(),
 });
 
 /**
@@ -61,6 +62,7 @@ const processEnv = {
   HOST_NAME: process.env.HOST_NAME,
   PRICE_ID: process.env.PRICE_ID,
   STRIPE_WEB_HOOK_SECRET: process.env.STRIPE_WEB_HOOK_SECRET,
+  OPENAI_API_KEY: process.env.OPENAI_API_KEY,
 };
 
 // Don't touch the part below

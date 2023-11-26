@@ -181,11 +181,17 @@ const GeneratePage: NextPage = () => {
         {error && (
           <div className="rounded-md bg-red-500 p-4 text-white">{error}</div>
         )}
+        {generateIcon.isLoading && (
+          <div className="loader mb-16">
+            <div className="loader_cube loader_cube--color"></div>
+            <div className="loader_cube loader_cube--glowing"></div>
+          </div>
+        )}
 
         {image && (
           <>
-            <section className="grid grid-cols-4 gap-4">
-              <Link href={image}>
+            <section className="mb-16">
+              <Link href={image} target="_blank">
                 <Image
                   src={image}
                   alt={form.prompt}

@@ -70,38 +70,35 @@ function Header2() {
                   <div className="relative inline-block text-left">
                     <div className=" ">
                       {isLogedIn && (
-                        <p>
-                          Credits:{" "}
-                          <span className="font-bold text-indigo-950">
-                            {credits.data}
-                          </span>
-                        </p>
+                        <div className="flex flex-col items-center">
+                          <p>
+                            Credits:{" "}
+                            <span className="font-bold text-indigo-950">
+                              {credits.data}
+                            </span>
+                          </p>
+                          <Image
+                            onMouseEnter={() => setShowMenu(true)}
+                            className="hidden cursor-pointer rounded-full shadow-xl md:block"
+                            src={session.data?.user.image || "/logosmall.png"}
+                            width={40}
+                            height={0}
+                            alt="user"
+                          />
+                        </div>
                       )}
 
-                      <button
-                        onMouseEnter={() => setShowMenu(true)}
-                        type="button"
-                        className="flex w-full items-center justify-center  py-2"
-                        id="options-menu"
-                      >
-                        {!isLogedIn && (
-                          <div
-                            className="text-md mx-4 block cursor-pointer rounded-xl bg-indigo-500 px-4 py-1 font-semibold text-white shadow-xl hover:bg-indigo-700"
-                            role="menuitem"
-                          >
-                            <span className="flex flex-col">
-                              <span onClick={() => signIn()}>Login</span>
-                            </span>
-                          </div>
-                        )}
-                        <Image
-                          className="hidden rounded-full shadow-xl md:block"
-                          src={session.data?.user.image || "/logosmall.png"}
-                          width={40}
-                          height={0}
-                          alt="user"
-                        />
-                      </button>
+                      {!isLogedIn && (
+                        <div
+                          className="text-md mx-4 block cursor-pointer rounded-xl bg-indigo-500 px-4 py-1 font-semibold text-white shadow-xl hover:bg-indigo-700"
+                          role="menuitem"
+                        >
+                          <span className="flex flex-col">
+                            <span onClick={() => signIn()}>Login</span>
+                          </span>
+                        </div>
+                      )}
+
                       {showMenu && (
                         <div
                           onMouseLeave={() => setShowMenu(false)}
@@ -170,18 +167,21 @@ function Header2() {
               <Link
                 className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 dark:text-white"
                 href="/generate"
+                onClick={() => setShowBurger(false)}
               >
                 Generate
               </Link>
               <Link
                 className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 "
                 href="/community"
+                onClick={() => setShowBurger(false)}
               >
                 Community
               </Link>
               <Link
                 className="block rounded-md px-3 py-2 text-7xl font-medium text-gray-300 "
                 href="/showcase"
+                onClick={() => setShowBurger(false)}
               >
                 Collection
               </Link>

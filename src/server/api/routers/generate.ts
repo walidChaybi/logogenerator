@@ -94,4 +94,12 @@ export const generateRouter = createTRPCRouter({
         imageUrl: firebase_url,
       };
     }),
+  generateWithDalle: protectedProcedure
+    .input(
+      z.object({
+        prompt: z.string(),
+        style: z.string().optional(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {}),
 });
