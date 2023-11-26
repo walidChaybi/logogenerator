@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { TRPCError } from "@trpc/server";
-import { z } from "zod";
+import { number, z } from "zod";
 import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
 import Replicate from "replicate";
 import { env } from "~/env.mjs";
@@ -21,7 +21,9 @@ const replicate = new Replicate({
 
 async function generateIcon(
   prompt: string,
-  color: string
+  color?: string,
+  number?: number,
+  shape?: string
 ): Promise<string | undefined> {
   // if (env.MOCK_REPLICATE === "true") {
   //   return "https://firebasestorage.googleapis.com/v0/b/ainotes-5a225.appspot.com/o/icon1700497171428.png?alt=media&token=f5f23653-b572-42e7-8e4a-f1e84347db61";
@@ -32,7 +34,7 @@ async function generateIcon(
       input: {
         width: 1024,
         height: 1024,
-        prompt: `${prompt} app icon in ${color} `,
+        prompt: `A mesmerizlingly beautifully detailed ios app icon,8k (best-quality:0.8), soft light, of ${prompt}, trending on art station`,
         refine: "no_refiner",
         scheduler: "K_EULER",
         lora_scale: 0.6,
@@ -55,6 +57,8 @@ export const generateRouter = createTRPCRouter({
       z.object({
         prompt: z.string(),
         color: z.string().optional(),
+        number: z.number().optional(),
+        shape: z.string().optional(),
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -78,7 +82,12 @@ export const generateRouter = createTRPCRouter({
           message: "Not enough credits",
         });
       }
-      const url = await generateIcon(input.prompt, input.color || "colorful");
+      const url = await generateIcon(
+        input.prompt,
+        input.color || "colorful",
+        input.number || 1,
+        input.shape || "rounded"
+      );
 
       const firebase_url = await uploadFileToFirebase(url as string, "icon");
 

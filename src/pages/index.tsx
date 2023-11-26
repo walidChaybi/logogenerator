@@ -11,13 +11,12 @@ const HeroBanner = () => {
     <section className="container mt-16 flex flex-col-reverse md:flex-row ">
       <div className="my-24 flex flex-1 flex-col font-medium text-gray-950">
         <h1 className="my-10 text-6xl">
-          Generate awesome{" "}
+          Generate mesmerizing{" "}
           <span className="font-bold text-indigo-500">icons</span> with a click
           of a button
         </h1>
         <p className="text-xl font-normal text-gray-500">
-          Unleash the Power of AI Creativity , Try our AI generator today and
-          see the possibilities
+          Unleash the Power of AI Creativity , with as little as 0.05$ per icon
         </p>
         <button onClick={() => router.push("/generate")} className="btn mt-8 ">
           Start for Free

@@ -105,10 +105,10 @@ function Header2() {
                       {showMenu && (
                         <div
                           onMouseLeave={() => setShowMenu(false)}
-                          className="absolute mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-gray-800 md:right-0"
+                          className="glass absolute mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-gray-800 md:right-0 "
                         >
                           <div
-                            className="py-1 "
+                            className="py-4"
                             role="menu"
                             aria-orientation="vertical"
                             aria-labelledby="options-menu"
@@ -150,35 +150,17 @@ function Header2() {
               </div>
             </div>
 
-            <div
-              onClick={() => setShowBurger((showBurger) => !showBurger)}
-              className="z-50 -mr-2 flex md:hidden"
-            >
-              <button className="inline-flex items-center justify-center rounded-md p-2 text-gray-800 duration-500 ease-in-out hover:text-gray-300 focus:outline-none dark:text-white">
-                {showBurger ? (
-                  <svg
-                    width="20"
-                    height="20"
-                    fill="white"
-                    className="h-8 w-8"
-                    viewBox="0 0 1792 1792"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z"></path>
-                  </svg>
-                ) : (
-                  <svg
-                    width="20"
-                    height="20"
-                    fill="black"
-                    className="h-8 w-8"
-                    viewBox="0 0 1792 1792"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z"></path>
-                  </svg>
-                )}
-              </button>
+            <div className=" z-50 -mr-2 flex md:hidden">
+              <input
+                onClick={() => setShowBurger((showBurger) => !showBurger)}
+                type="checkbox"
+                id="checkbox"
+              />
+              <label htmlFor="checkbox" className="toggle">
+                <div className="bars" id="bar1"></div>
+                <div className="bars" id="bar2"></div>
+                <div className="bars" id="bar3"></div>
+              </label>
             </div>
           </div>
         </div>
