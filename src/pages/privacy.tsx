@@ -157,10 +157,9 @@ const PrivacyPolicy = () => {
       <h1 className="mb-4 text-3xl font-bold">Privacy Policy</h1>
 
       <p className="mb-4">
-        This Privacy Policy governs the manner in which IconWizard ("we", "us",
-        or "our") collects, uses, maintains, and discloses information collected
-        from users (each, a "User") of the Iconwizard apps and application
-        ("App").
+        This Privacy Policy governs the manner in which IconWizard we, us, or
+        our collects, uses, maintains, and discloses information collected from
+        users each, a User of the Iconwizard apps and application App.
       </p>
 
       <h2 className="mb-2 text-xl font-bold">1. Information We Collect</h2>
@@ -176,7 +175,7 @@ const PrivacyPolicy = () => {
         2. How We Use Collected Information
       </h2>
       <p className="mb-4">
-        We may collect and use Users' personal information for the following
+        We may collect and use Users personal information for the following
         purposes:
       </p>
       <ul className="mb-4 list-disc pl-8">
@@ -200,11 +199,11 @@ const PrivacyPolicy = () => {
         4. Sharing Your Personal Information
       </h2>
       <p className="mb-4">
-        We do not sell, trade, or rent Users' personal identification
-        information to others. We may share generic aggregated demographic
-        information not linked to any personal identification information
-        regarding visitors and users with our business partners, trusted
-        affiliates, and advertisers for the purposes outlined above.
+        We do not sell, trade, or rent Users personal identification information
+        to others. We may share generic aggregated demographic information not
+        linked to any personal identification information regarding visitors and
+        users with our business partners, trusted affiliates, and advertisers
+        for the purposes outlined above.
       </p>
 
       <h2 className="mb-2 text-xl font-bold">5. Third-Party Services</h2>
