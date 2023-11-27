@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "deploy": "npm run build && rsync --exclude=.get -azP . ubuntu@13.36.161.10:/home/ubuntu/apps/icongenerator",
     "build": "next build",
     "dev": "next dev",
     "postinstall": "prisma generate",
