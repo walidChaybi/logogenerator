@@ -18,6 +18,10 @@ const MyApp: AppType<{ session: Session | null }> = ({
       <NextUIProvider>
         <Head>
           <title>Icon Wizard</title>
+          <meta
+            name="google-adsense-account"
+            content="ca-pub-1378947158483618"
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
