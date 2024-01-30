@@ -27,7 +27,7 @@ function Footer() {
             </li>
             <li>
               <a href="#" className="me-4 hover:underline md:me-6">
-                Licensing
+                Licensings
               </a>
             </li>
             <li>
