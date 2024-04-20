@@ -21,7 +21,7 @@ import { getServerAuthSession } from "~/server/auth";
 import { prisma } from "~/server/db";
 
 export const config = {
-  // maxDuration: 200,
+  maxDuration: 200,
 };
 
 type CreateContextOptions = {

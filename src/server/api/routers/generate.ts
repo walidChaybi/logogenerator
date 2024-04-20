@@ -12,7 +12,7 @@ import { env } from "~/env.mjs";
 import { uploadFileToFirebase } from "~/utils/firebase";
 
 export const config = {
-  // maxDuration: 200,
+  maxDuration: 200,
 };
 
 const replicate = new Replicate({

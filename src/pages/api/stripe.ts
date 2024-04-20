@@ -10,7 +10,7 @@ export const config = {
   api: {
     bodyParser: false,
   },
-  // maxDuration: 200,
+  maxDuration: 200,
 };
 
 const endpointSecret = "whsec_ugmwd3RcHqvjUjXTl824eO7dqatUAA9L";
