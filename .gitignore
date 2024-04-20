@@ -52,3 +52,6 @@ yarn-error.log*
 
 # open-next
 .open-next
+
+# Contentlayer
+.contentlayer
